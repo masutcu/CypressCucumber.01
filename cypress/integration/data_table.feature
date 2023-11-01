@@ -1,0 +1,18 @@
+Feature: Login Manager Psw
+
+Scenario: Manager id1
+Given user goes page
+And login with use data
+|username|password|
+|Manager|Manager1!|
+And user clicks loginButton
+And verify login
+
+
+Scenario: Manager id2
+Given user goes page
+And login with use data
+|username|password|
+|Manager2|Manager2!|
+And user clicks loginButton
+And verify login

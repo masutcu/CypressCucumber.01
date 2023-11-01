@@ -1,0 +1,23 @@
+1-https://www.npmjs.com/package/cypress-cucumber-preprocessor
+
+2- npm install --save-dev cypress-cucumber-preprocessor
+
+3- konfigurasyon ayarları için plugins altında index.js içine aşağıdaki kod yapıştırılır.
+const cucumber = require('cypress-cucumber-preprocessor').default
+
+module.exports = (on, config) => {
+  on('file:preprocessor', cucumber())
+}
+
+4- cypress.json dosyası içine aşağıdaki kod yapıştırılır.
+{
+  "testFiles": "**/*.feature"
+}
+
+5- package.json içerisindendosyası içine aşağıdaki kod bloğu yapıştırılır.
+"cypress-cucumber-preprocessor": {
+  "nonGlobalStepDefinitions": true
+}
+
+NOT: feature file dosya ismi ile step definition dosya ismi aynı olmak zorundadır.
+
