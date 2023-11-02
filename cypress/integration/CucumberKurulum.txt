@@ -19,5 +19,19 @@ module.exports = (on, config) => {
   "nonGlobalStepDefinitions": true
 }
 
-NOT: feature file dosya ismi ile step definition dosya ismi aynı olmak zorundadır.
+NOT: feature file dosya ismi ile step definition yani .js dosya ismi aynı olmak zorundadır.
+
+TESTLERİ ÇALIŞTIRMA
+./node_modules/.bin/cypress-tags run -e TAGS='@manager_id'
+Tag ı @manager_id olan testi çalıştırır
+
+./node_modules/.bin/cypress-tags run -e TAGS='@smoke'
+Tag ı @manager_id olanlar hariç diğer testleri çalıştırır
+
+./node_modules/.bin/cypress-tags run -e TAGS='not @manager_id'
+Tag ı @manager_id olanlar hariç diğer testleri çalıştırır
+
+NOT:tag ile çalıştırırken windows ta hata alanlar için
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 
